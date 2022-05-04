@@ -1,0 +1,68 @@
+:root {
+    --dark: #rgb(100,100,100);
+    --light: #rgb(255,200,200);
+
+}
+
+html{
+    font-family: sans-serif;
+}
+
+.game-board{
+    display: flex;
+    justify-content: center;
+}
+
+#title-container {
+    margin: auto auto;
+    width: 1000px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.full-chess-board {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+    align-self: center;
+}
+
+.full-chess-board div {
+    display: flex;
+    height: 60px;
+}
+
+.full-chess-board div div {
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#row-8 > :is(.a,.c,.e,.g),#row-6 > :is(.a,.c,.e,.g),#row-4 > :is(.a,.c,.e,.g), #row-2 > :is(.a,.c,.e,.g) {
+    background-color: burlywood;
+}
+
+#row-8 > :is(.b,.d,.f,.h),#row-6 > :is(.b,.d,.f,.h),#row-4 > :is(.b,.d,.f,.h), #row-2 > :is(.b,.d,.f,.h) {
+    background-color: gray;
+}
+
+#row-7 > :is(.b,.d,.f,.h), #row-5 > :is(.b,.d,.f,.h), #row-3 > :is(.b,.d,.f,.h), #row-1 > :is(.b,.d,.f,.h){
+    background-color: burlywood;
+}
+
+#row-7 > :is(.a,.c,.e,.g),#row-5 > :is(.a,.c,.e,.g),#row-3 > :is(.a,.c,.e,.g), #row-1 > :is(.a,.c,.e,.g) {
+    background-color: gray;
+}
+
+#row-7 > .seven{
+    font-size: 30px;
+    color: black;
+}
+
+#row-2 > .two{
+    font-size: 30px;
+    color: white;
+}

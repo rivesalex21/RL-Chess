@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>RL Chess</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <div id="title-container">
+                <h1>An Application in Reinforcement Learning</h1>
+            </div>
+        </header>
+
+        <main class="game-board">
+            <div class="full-chess-board">
+                <div class="top-bottom">
+                    <div class="label blank"></div>
+                    <div class="label a">a</div>
+                    <div class="label b">b</div>
+                    <div class="label c">c</div>
+                    <div class="label d">d</div>
+                    <div class="label e">e</div>
+                    <div class="label f">f</div>
+                    <div class="label g">g</div>
+                    <div class="label h">h</div>
+                    <div class="label blank"></div>
+                </div>
+                <div id="row-8">
+                    <div class="label-8">8</div>
+                    <div class="row-8-a a eight"></div>
+                    <div class="row-8-b b eight"></div>
+                    <div class="row-8-c c eight"></div>
+                    <div class="row-8-d d eight"></div>
+                    <div class="row-8-e e eight"></div>
+                    <div class="row-8-f f eight"></div>
+                    <div class="row-8-g g eight"></div>
+                    <div class="row-8-h h eight"></div>
+                    <div class="label-8">8</div>
+                </div>
+
+                <div id="row-7">
+                    <div class="label-7">7</div>
+                    <div class="row-7-a a seven">P</div>
+                    <div class="row-7-b b seven">P</div>
+                    <div class="row-7-c c seven">P</div>
+                    <div class="row-7-d d seven">P</div>
+                    <div class="row-7-e e seven">P</div>
+                    <div class="row-7-f f seven">P</div>
+                    <div class="row-7-g g seven">P</div>
+                    <div class="row-7-h h seven">P</div>
+                    <div class="label-7">7</div>
+                </div>
+
+                <div id="row-6">
+                    <div class="label-6">6</div>
+                    <div class="row-6-a a six"></div>
+                    <div class="row-6-b b six"></div>
+                    <div class="row-6-c c six"></div>
+                    <div class="row-6-d d six"></div>
+                    <div class="row-6-e e six"></div>
+                    <div class="row-6-f f six"></div>
+                    <div class="row-6-g g six"></div>
+                    <div class="row-6-h h six"></div>
+                    <div class="label-6">6</div>
+                </div>
+
+                <div id="row-5">
+                    <div class="label-5">5</div>
+                    <div class="row-5-a a five"></div>
+                    <div class="row-5-b b five"></div>
+                    <div class="row-5-c c five"></div>
+                    <div class="row-5-d d five"></div>
+                    <div class="row-5-e e five"></div>
+                    <div class="row-5-f f five"></div>
+                    <div class="row-5-g g five"></div>
+                    <div class="row-5-h h five"></div>
+                    <div class="label-5">5</div>
+                </div>
+
+                <div id="row-4">
+                    <div class="label-4">4</div>
+                    <div class="row-4-a a four"></div>
+                    <div class="row-4-b b four"></div>
+                    <div class="row-4-c c four"></div>
+                    <div class="row-4-d d four"></div>
+                    <div class="row-4-e e four"></div>
+                    <div class="row-4-f f four"></div>
+                    <div class="row-4-g g four"></div>
+                    <div class="row-4-h h four"></div>
+                    <div class="label-4">4</div>
+                </div>
+
+                <div id="row-3">
+                    <div class="label-3">3</div>
+                    <div class="row-3-a a three"></div>
+                    <div class="row-3-b b three"></div>
+                    <div class="row-3-c c three"></div>
+                    <div class="row-3-d d three"></div>
+                    <div class="row-3-e e three"></div>
+                    <div class="row-3-f f three"></div>
+                    <div class="row-3-g g three"></div>
+                    <div class="row-3-h h three"></div>
+                    <div class="label-3">3</div>
+                </div>
+
+                <div id="row-2">
+                    <div class="label-2">2</div>
+                    <div class="row-2-a a two">P</div>
+                    <div class="row-2-b b two">P</div>
+                    <div class="row-2-c c two">P</div>
+                    <div class="row-2-d d two">P</div>
+                    <div class="row-2-e e two">P</div>
+                    <div class="row-2-f f two">P</div>
+                    <div class="row-2-g g two">P</div>
+                    <div class="row-2-h h two">P</div>
+                    <div class="label-2">2</div>
+                </div>
+
+                <div id="row-1">
+                    <div class="label-1">1</div>
+                    <div class="row-1-a a one"></div>
+                    <div class="row-1-b b one"></div>
+                    <div class="row-1-c c one"></div>
+                    <div class="row-1-d d one"></div>
+                    <div class="row-1-e e one"></div>
+                    <div class="row-1-f f one"></div>
+                    <div class="row-1-g g one"></div>
+                    <div class="row-1-h h one"></div>
+                    <div class="label-1">1</div>
+                </div>
+
+                <div class="top-bottom">
+                    <div class="label blank"></div>
+                    <div class="label a">a</div>
+                    <div class="label b">b</div>
+                    <div class="label c">c</div>
+                    <div class="label d">d</div>
+                    <div class="label e">e</div>
+                    <div class="label f">f</div>
+                    <div class="label g">g</div>
+                    <div class="label h">h</div>
+                    <div class="label blank"></div>
+                </div>
+            </div>
+        </main>
+
+    </body>
+</html>
