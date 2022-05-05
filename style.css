@@ -1,6 +1,6 @@
 :root {
-    --dark: #rgb(100,100,100);
-    --light: #rgb(255,200,200);
+    --dark: rgb(100,100,100);
+    --light: rgb(255,200,200);
 
 }
 
@@ -41,8 +41,18 @@ h1 {
     
 }
 
+.full-chess-board > div > div:hover {
+    filter: brightness(85%); 
+}
+
+
+
 #row-8 > :is(.a,.c,.e,.g),#row-6 > :is(.a,.c,.e,.g),#row-4 > :is(.a,.c,.e,.g), #row-2 > :is(.a,.c,.e,.g) {
-    background-color: burlywood;
+    background: burlywood;
+}
+
+#a3{
+    background: var(--light);
 }
 
 #row-8 > :is(.b,.d,.f,.h),#row-6 > :is(.b,.d,.f,.h),#row-4 > :is(.b,.d,.f,.h), #row-2 > :is(.b,.d,.f,.h) {
@@ -50,7 +60,7 @@ h1 {
 }
 
 #row-7 > :is(.b,.d,.f,.h), #row-5 > :is(.b,.d,.f,.h), #row-3 > :is(.b,.d,.f,.h), #row-1 > :is(.b,.d,.f,.h){
-    background-color: burlywood;
+    background-color: rgb(222, 184, 135);
 }
 
 #row-7 > :is(.a,.c,.e,.g),#row-5 > :is(.a,.c,.e,.g),#row-3 > :is(.a,.c,.e,.g), #row-1 > :is(.a,.c,.e,.g) {
