@@ -1,0 +1,11 @@
+.white {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--bs-light);
+}
+
+.black {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--bs-dark);
+}

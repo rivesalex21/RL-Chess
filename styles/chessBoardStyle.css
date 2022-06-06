@@ -37,9 +37,3 @@
 #row-7 > :is(.a,.c,.e,.g),#row-5 > :is(.a,.c,.e,.g),#row-3 > :is(.a,.c,.e,.g), #row-1 > :is(.a,.c,.e,.g) {
     background-color: gray;
 }
-
-.white {
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--bs-light);
-}
