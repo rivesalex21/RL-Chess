@@ -9,6 +9,16 @@ function containsPiece(element) {
     return 'no-piece'
 }
 
+function containsBlackPiece(element){
+    if (element.hasChildNodes()) {
+        let possiblePiece = element.firstChild.className.split(' ')[1]
+        if (possiblePiece.includes('black')) {
+            return true
+        }
+    }
+    return false
+}
+
 
 function getMove(element) {
     let piece = containsPiece(element)
