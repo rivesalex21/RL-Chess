@@ -9,10 +9,27 @@ function containsPiece(element) {
     return 'no-piece'
 }
 
+function Legal(element) {
+    if (element.hasChildNodes()) {
+            return false
+        }
+    return true
+}
+
 function containsBlackPiece(element){
     if (element.hasChildNodes()) {
         let possiblePiece = element.firstChild.className.split(' ')[1]
         if (possiblePiece.includes('black')) {
+            return true
+        }
+    }
+    return false
+}
+
+function containsWhitePiece(element){
+    if (element.hasChildNodes()) {
+        let possiblePiece = element.firstChild.className.split(' ')[1]
+        if (possiblePiece.includes('white')) {
             return true
         }
     }
@@ -30,6 +47,7 @@ function getMove(element) {
             Moves['possibleTiles'] = possibleMovesPawnWhite(element)
             Moves['active'] = true
             break;
+
         case 'pawn-black':
             Moves['currentPiece'] = piece
             Moves['currentTile'] = element.parentNode
@@ -49,12 +67,22 @@ function getMove(element) {
 
 function applyMove(element) {
     if (Moves['possibleTiles']== undefined) { return Moves['active'] = false}
+
     // Prevent switching target piece: 
-    let target = element    
-    if(containsPiece(element)!= 'no-piece') { target = element.parentNode }  
+    let target = element
+    if (target.id == '') {target = element.parentNode}
 
     if (Moves['possibleTiles'].includes(target)) {
         movePiece(Moves.currentPiece,Moves.currentTile,target)
     }
     Moves['active'] = false
+}
+
+function analyzeMove(element) {
+    let target = element
+    if (target.id == '') {target = element.parentNode}
+
+    if (target.childElementCount > 1) {
+        target.firstChild.remove()
+    }
 }
