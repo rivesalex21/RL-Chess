@@ -55,6 +55,7 @@ function getMove(element) {
             Moves['active'] = true
             break;
 
+        // Bishops
         case 'bishop-white':
             Moves['currentPiece'] = piece
             Moves['currentTile'] = element.parentNode
@@ -68,6 +69,24 @@ function getMove(element) {
             Moves['possibleTiles'] = possibleMovesBishopBlack(element)
             Moves['active'] = true
             break;
+
+        // Rooks
+        case 'rook-white':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesRookWhite(element)
+            Moves['active'] = true
+            break;
+
+        case 'rook-black':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesRookBlack(element)
+            Moves['active'] = true
+            break;
+
+            
+    
 
 
         default:
