@@ -32,12 +32,12 @@ gameBoard.addEventListener('click', (event) => {
 
 for (i=0 ; i < LETTERS.length ; i++) {
     let currentTile = document.getElementById(`${LETTERS[i]}2`)
-    createPawnWhite(currentTile)
+    createBishopWhite(currentTile)
 }
 
 for (i=0 ; i < LETTERS.length ; i++) {
     let currentTile = document.getElementById(`${LETTERS[i]}7`)
-    createPawnBlack(currentTile)
+    createBishopBlack(currentTile)
 }
 
 

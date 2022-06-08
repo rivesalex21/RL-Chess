@@ -9,7 +9,7 @@ function containsPiece(element) {
     return 'no-piece'
 }
 
-function Legal(element) {
+function isLegal(element) {
     if (element.hasChildNodes()) {
             return false
         }
@@ -52,6 +52,20 @@ function getMove(element) {
             Moves['currentPiece'] = piece
             Moves['currentTile'] = element.parentNode
             Moves['possibleTiles'] = possibleMovesPawnBlack(element)
+            Moves['active'] = true
+            break;
+
+        case 'bishop-white':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesBishopWhite(element)
+            Moves['active'] = true
+            break;
+
+        case 'bishop-black':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesBishopBlack(element)
             Moves['active'] = true
             break;
 

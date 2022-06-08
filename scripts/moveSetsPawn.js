@@ -35,8 +35,8 @@ function diagonalMovePawn(element,depth) {
     }
 
     if (currentIndex > 0 && currentIndex < 7) {
-        frontRight = document.getElementById(`${LETTERS[currentIndex+1]}${startNumber+depth}`)
-        frontLeft = document.getElementById(`${LETTERS[currentIndex-1]}${startNumber+depth}`)
+        frontRight = document.getElementById(`${LETTERS[currentIndex+depth]}${startNumber+depth}`)
+        frontLeft = document.getElementById(`${LETTERS[currentIndex-depth]}${startNumber+depth}`)
     }
 
     return [frontLeft , frontRight]
