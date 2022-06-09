@@ -85,6 +85,20 @@ function getMove(element) {
             Moves['active'] = true
             break;
 
+        case 'knight-white':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesKnightWhite(element)
+            Moves['active'] = true
+            break;
+
+        case 'knight-black':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesKnightBlack(element)
+            Moves['active'] = true
+            break;
+
             
     
 

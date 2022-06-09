@@ -32,7 +32,7 @@ gameBoard.addEventListener('click', (event) => {
 
 for (i=0 ; i < LETTERS.length ; i++) {
     let currentTile = document.getElementById(`${LETTERS[i]}2`)
-    createBishopWhite(currentTile)
+    createKnightWhite(currentTile)
 }
 
 for (i=0 ; i < LETTERS.length ; i++) {
