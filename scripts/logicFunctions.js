@@ -98,10 +98,34 @@ function getMove(element) {
             Moves['possibleTiles'] = possibleMovesKnightBlack(element)
             Moves['active'] = true
             break;
+        
+        case 'queen-white':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesQueenWhite(element)
+            Moves['active'] = true
+            break;
 
-            
-    
+        case 'queen-black':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesQueenBlack(element)
+            Moves['active'] = true
+            break;
 
+        case 'king-white':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesKingWhite(element)
+            Moves['active'] = true
+            break;
+
+        case 'king-black':
+            Moves['currentPiece'] = piece
+            Moves['currentTile'] = element.parentNode
+            Moves['possibleTiles'] = possibleMovesKingBlack(element)
+            Moves['active'] = true
+            break;
 
         default:
             Moves['currentTile'] = null
@@ -109,7 +133,6 @@ function getMove(element) {
             Moves['newTile'] = null
             Moves['active'] = false
     }
-
 }
 
 function applyMove(element) {

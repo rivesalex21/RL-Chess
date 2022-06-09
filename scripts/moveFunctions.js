@@ -28,7 +28,7 @@ function movePiece(pieceType,startingPoint,endingPoint) {
             createQueenWhite(endingPoint)
             break
 
-        case 'pawn-white':
+        case 'king-white':
             createKingWhite(endingPoint)
             break
 
@@ -54,7 +54,7 @@ function movePiece(pieceType,startingPoint,endingPoint) {
             createQueenBlack(endingPoint)
             break
 
-        case 'pawn-black':
+        case 'king-black':
             createKingBlack(endingPoint)
             break
     }

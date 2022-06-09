@@ -5,11 +5,11 @@ function possibleMovesPawnWhite(element) {
     let doubleForward = verticalMovePawn(element,2)
     let [frontLeft , frontRight] = diagonalMovePawn(element,1)
 
-    if (element.parentNode.parentNode.id == 'row-2' && Legal(doubleForward) && Legal(singleForward)) {
+    if (element.parentNode.parentNode.id == 'row-2' && isLegal(doubleForward) && isLegal(singleForward)) {
         possibleMoves.push(doubleForward)
     }
     
-    if (Legal(singleForward) ) {possibleMoves.push(singleForward)}
+    if (isLegal(singleForward) ) {possibleMoves.push(singleForward)}
     if (containsBlackPiece(frontLeft)) {possibleMoves.push(frontLeft)}
     if (containsBlackPiece(frontRight)) {possibleMoves.push(frontRight)}
         
@@ -23,10 +23,10 @@ function possibleMovesPawnBlack(element) {
     let doubleForward = verticalMovePawn(element,-2)
     let [frontLeft , frontRight] = diagonalMovePawn(element,-1)
 
-    if (element.parentNode.parentNode.id == 'row-7'&& Legal(doubleForward) && Legal(singleForward)) {
+    if (element.parentNode.parentNode.id == 'row-7'&& isLegal(doubleForward) && isLegal(singleForward)) {
         possibleMoves.push(doubleForward)
     }
-    if (Legal(singleForward) ) {possibleMoves.push(singleForward)}
+    if (isLegal(singleForward) ) {possibleMoves.push(singleForward)}
     if (containsWhitePiece(frontLeft)) {possibleMoves.push(frontLeft)}
     if (containsWhitePiece(frontRight)) {possibleMoves.push(frontRight)}
         
