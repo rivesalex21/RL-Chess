@@ -18,8 +18,10 @@ const Moves = {
     currentTile: null , 
     possibleTiles : null,
     newTile: null,
-    active: false
+    active: false,
+    turn: 'white'
 }
+
 
 gameBoard.addEventListener('click', (event) => {
     
@@ -28,12 +30,10 @@ gameBoard.addEventListener('click', (event) => {
         analyzeMove(event.target)
         return
     }
-    
+
     if (Moves['active'] == false) {
         getMove(event.target)
     }
-
-    
 })
 
 

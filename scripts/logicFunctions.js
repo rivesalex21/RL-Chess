@@ -36,9 +36,17 @@ function containsWhitePiece(element){
     return false
 }
 
+function changeTurn() {
+    return (Moves.turn == 'white' ? Moves.turn = 'black' : Moves.turn = 'white')
+}
 
 function getMove(element) {
     let piece = containsPiece(element)
+    let currentColor = piece.split('-')[1]
+    
+    if(currentColor != Moves.turn) {
+        piece = 'no-piece'
+    }
     
     switch (piece) {
         case 'pawn-white':
@@ -155,4 +163,7 @@ function analyzeMove(element) {
     if (target.childElementCount > 1) {
         target.firstChild.remove()
     }
+
+    changeTurn()
+    
 }
