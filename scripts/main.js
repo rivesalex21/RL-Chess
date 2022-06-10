@@ -11,7 +11,8 @@ const f1 = document.getElementById('f1') ; const f8 = document.getElementById('f
 const g1 = document.getElementById('g1') ; const g8 = document.getElementById('g8')
 const h1 = document.getElementById('h1') ; const h8 = document.getElementById('h8')
 
-const LETTERS = ['a','b','c','d','e','f','g','h']               
+const LETTERS = ['a','b','c','d','e','f','g','h'] 
+
 
 const Moves = {
     currentPiece: null,
@@ -38,7 +39,7 @@ gameBoard.addEventListener('click', (event) => {
 
 
 // Creating the game board.
-
+/*
 for (i=0 ; i < LETTERS.length ; i++) {
     let currentTile = document.getElementById(`${LETTERS[i]}2`)
     createPawnWhite(currentTile)
@@ -47,18 +48,24 @@ for (i=0 ; i < LETTERS.length ; i++) {
 createRookWhite(a1) ; createRookWhite(h1)
 createKnightWhite(b1) ; createKnightWhite(g1)
 createBishopWhite(c1) ; createBishopWhite(f1)
-createQueenWhite(d1) ; createKingWhite(e1)
+createQueenWhite(d1) ;
 
+createKingWhite(e1)
 
+/*
 for (i=0 ; i < LETTERS.length ; i++) {
     let currentTile = document.getElementById(`${LETTERS[i]}7`)
     createPawnBlack(currentTile)
 }
 
-createRookBlack(a8) ; createRookBlack(h8)
+xcreateRookBlack(a8) ; createRookBlack(h8)
 createKnightBlack(b8) ; createKnightBlack(g8)
 createBishopBlack(c8) ; createBishopBlack(f8)
-createQueenBlack(d8) ; createKingBlack(e8)
+createQueenBlack(d8) ; 
+
+
+createKingBlack(e8)
+*/
 
 
 yar = document.getElementById('a4')

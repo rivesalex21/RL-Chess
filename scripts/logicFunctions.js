@@ -143,6 +143,25 @@ function getMove(element) {
     }
 }
 
+function getPossibleMoves(element) {
+    let piece = containsPiece(element)
+    let currentColor = piece.split('-')[1]
+
+    if(piece == 'pawn-white') { return possibleMovesPawnWhite(element)}
+    if(piece == 'bishop-white') { return possibleMovesBishopWhite(element)}
+    if(piece == 'rook-white') { return possibleMovesRookWhite(element)}
+    if(piece == 'knight-white') { return possibleMovesKnightWhite(element)}
+    if(piece == 'queen-white') {return possibleMovesQueenWhite(element)}
+    if(piece == 'king-white') { return possibleMovesKingWhite(element)}
+
+    if(piece == 'pawn-black') { return possibleMovesPawnBlack(element)}
+    if(piece == 'bishop-black') { return possibleMovesBishopBlack(element)}
+    if(piece == 'rook-black') { return possibleMovesRookBlack(element)}
+    if(piece == 'knight-black') { return possibleMovesKnightBlack(element)}
+    if(piece == 'queen-black') { return possibleMovesQueenBlack(element)}
+    if(piece == 'king-black') { return possibleMovesKingBlack(element)}  
+}
+
 function applyMove(element) {
     if (Moves['possibleTiles']== undefined) { return Moves['active'] = false}
 
@@ -152,6 +171,7 @@ function applyMove(element) {
 
     if (Moves['possibleTiles'].includes(target)) {
         movePiece(Moves.currentPiece,Moves.currentTile,target)
+        changeTurn()
     }
     Moves['active'] = false
 }
@@ -164,6 +184,30 @@ function analyzeMove(element) {
         target.firstChild.remove()
     }
 
-    changeTurn()
     
+}
+
+function inCheck(currentPlayer) {
+    // Checks the board to see if the kings are in check
+    let currentBoard = null
+    let whiteKing = document.getElementsByClassName('king-white')[0]
+    let blackKing = document.getElementsByClassName('king-black')[0]
+
+    if (currentPlayer == 'white') {currentBoard = document.getElementsByClassName('black')}
+    if (currentPlayer == 'black') {currentBoard = document.getElementsByClassName('white')}
+
+    let possibleMoves = []
+    for(let i = 0 ; i < currentBoard.length ; i++) {
+        target = currentBoard[i]
+        possibleMoves.push(getPossibleMoves(target))
+    }
+
+    possibleMoves = possibleMoves.flat()
+
+    if (currentPlayer == 'white') {
+        if(possibleMoves.includes(whiteKing.parentElement)) {return true}
+    }
+    if (currentPlayer == 'black') {
+        if(possibleMoves.includes(blackKing.parentElement)) {return true}
+    }
 }
