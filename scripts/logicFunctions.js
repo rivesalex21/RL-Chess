@@ -171,6 +171,14 @@ function applyMove(element) {
 
     if (Moves['possibleTiles'].includes(target)) {
         movePiece(Moves.currentPiece,Moves.currentTile,target)
+        if(inCheck(Moves.turn)) {
+            movePiece(Moves.currentPiece,target,Moves.currentTile)
+            alert('causes check, invalid')
+            return Moves['active'] = false
+
+        }
+
+
         changeTurn()
     }
     Moves['active'] = false
@@ -179,6 +187,8 @@ function applyMove(element) {
 function analyzeMove(element) {
     let target = element
     if (target.id == '') {target = element.parentNode}
+
+    // check to see if the move causes a check
 
     if (target.childElementCount > 1) {
         target.firstChild.remove()
@@ -210,4 +220,6 @@ function inCheck(currentPlayer) {
     if (currentPlayer == 'black') {
         if(possibleMoves.includes(blackKing.parentElement)) {return true}
     }
+
+    return false
 }

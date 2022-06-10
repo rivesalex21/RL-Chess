@@ -67,7 +67,7 @@ createQueenBlack(d8) ;
 createKingBlack(e8)
 */
 
-
+createKingWhite(e1)
 yar = document.getElementById('a4')
 yer = document.getElementById('a2')
 yee = document.getElementById('b2')
